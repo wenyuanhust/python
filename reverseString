@@ -1,10 +1,11 @@
+from collections import deque
+
 class Solution(object):
     def reverseString(self, s):
         """
         :type s: str
         :rtype: str
         """
-        if len(s) <= 1:
-            return s
-        else:
-            return reverseString(self, s[1:]) + s[0]
+        d = deque()
+        d.extendleft(s)
+        return ''.join(d)
